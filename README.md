@@ -35,6 +35,11 @@ The following libraries must be installed in Arduino IDE:
 |------------|---------|-------------|
 | RX (GPIO3) | Button  | User input button (Another PIN Button to GND) |
 
+### Circuit Diagram
+![Front side of jammer](https://github.com/debasishdastrp/BtWiFiJammer/blob/main/Bluetooth_jammer_circuit.png?raw=true)
+
+
+
 ## 🚀 Setup & Execution
 
 1. **Make the connections**: Complete the hardware setup as per the table above.
