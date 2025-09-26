@@ -2,6 +2,7 @@
 #include "RF24.h"
 #include <ezButton.h>
 #include <string>
+#include "images.h"
 
 //Im using nodemcu esp8266
 RF24 radio(2, 4);//CE, CSN 1st Radio
@@ -38,6 +39,7 @@ void setup() {
   button.setDebounceTime(100);
   pinMode(3, INPUT_PULLUP);
   pinMode(LED_BUILTIN,OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
  
   delay(900);
   if (radio.begin()) {
@@ -52,6 +54,12 @@ void setup() {
     radio.setCRCLength(RF24_CRC_DISABLED);
     radio.printPrettyDetails();
     radio.startConstCarrier(RF24_PA_MAX, i);
+
+    digitalWrite(LED_BUILTIN, LOW); // Turn the LED on
+    delay(500); 
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(500); 
+
     Serial.println("1st Radio started!");
     
   } else {
@@ -71,6 +79,12 @@ void setup() {
     radio2.setCRCLength(RF24_CRC_DISABLED);
     radio2.printPrettyDetails();
     radio2.startConstCarrier(RF24_PA_MAX, i);
+
+    digitalWrite(LED_BUILTIN, LOW); // Turn the LED on
+    delay(500); 
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(500);
+
     Serial.println("2nd Radio started!");
   } else {
     Serial.println("2nd Radio Could not be started");
